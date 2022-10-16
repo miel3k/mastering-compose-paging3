@@ -8,7 +8,7 @@ import org.koin.core.context.startKoin
 /**
  * Created by jmielczarek on 14/10/2022
  */
-class MasteringComposePaging3App : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -17,7 +17,7 @@ class MasteringComposePaging3App : Application() {
 
     private fun initKoin() {
         startKoin {
-            androidContext(this@MasteringComposePaging3App)
+            androidContext(this@App)
             modules(koinModules)
         }
     }

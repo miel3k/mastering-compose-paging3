@@ -2,8 +2,8 @@ package com.miel3k.masteringcomposepaging3.data.beer
 
 import androidx.paging.PagingSource
 import com.miel3k.masteringcomposepaging3.data.RepositoryResult
+import com.miel3k.masteringcomposepaging3.data.beer.entity.Beer
 import com.miel3k.masteringcomposepaging3.data.beer.local.BeerLocalDataSource
-import com.miel3k.masteringcomposepaging3.data.beer.model.Beer
 import com.miel3k.masteringcomposepaging3.data.beer.remote.BeerRemoteDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -25,8 +25,8 @@ class BeerRepository(
         withContext(dispatcher) { local.deleteBeers() }
     }
 
-    override suspend fun getBeersPagingSource(): PagingSource<Int, Beer> {
-        return withContext(dispatcher) { local.getBeersPagingSource() }
+    override fun getBeersPagingSource(): PagingSource<Int, Beer> {
+        return local.getBeersPagingSource()
     }
 
     override suspend fun loadBeers(page: Int, perPage: Int): RepositoryResult<List<Beer>> {

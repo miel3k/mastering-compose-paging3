@@ -1,4 +1,4 @@
-package com.miel3k.masteringcomposepaging3.data.beer.model
+package com.miel3k.masteringcomposepaging3.data.beer.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

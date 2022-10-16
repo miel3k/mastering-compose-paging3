@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.miel3k.masteringcomposepaging3.data.beer.model.Beer
+import com.miel3k.masteringcomposepaging3.data.beer.entity.Beer
 
 /**
  * Created by jmielczarek on 15/10/2022
