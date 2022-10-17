@@ -14,7 +14,7 @@ internal val networkModule = module {
     single {
         val client = OkHttpClient.Builder().build()
         Retrofit.Builder()
-            .baseUrl("https://api.punkapi.com/v2")
+            .baseUrl("https://api.punkapi.com/v2/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

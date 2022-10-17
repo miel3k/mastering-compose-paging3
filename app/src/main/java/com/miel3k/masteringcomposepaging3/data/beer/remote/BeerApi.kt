@@ -9,7 +9,7 @@ import retrofit2.http.Query
  * Created by jmielczarek on 15/10/2022
  */
 interface BeerApi {
-    @GET("/beers")
+    @GET("beers")
     suspend fun loadBeers(
         @Query("page") page: Int,
         @Query("per_page") perPage: Int
