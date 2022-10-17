@@ -16,7 +16,9 @@ import org.koin.androidx.compose.getViewModel
 fun BeersScreen(navController: NavHostController, viewModel: BeersViewModel = getViewModel()) {
     val uiState by viewModel.uiState.collectAsState()
     val beerModelPagingData = viewModel.beerModelPagingDataFlow.collectAsLazyPagingItems()
-    Scaffold {
+    Scaffold(
+        topBar = { BeersTopBar() },
+    ) {
         BeersContent()
     }
 }
