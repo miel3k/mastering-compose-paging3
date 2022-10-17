@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.miel3k.masteringcomposepaging3.presentation.beers.viewmodel.BeersViewModel
+import com.miel3k.masteringcomposepaging3.ui.theme.WhiteSmoke
 import org.koin.androidx.compose.getViewModel
 
 /**
@@ -16,9 +17,7 @@ import org.koin.androidx.compose.getViewModel
 fun BeersScreen(navController: NavHostController, viewModel: BeersViewModel = getViewModel()) {
     val uiState by viewModel.uiState.collectAsState()
     val beersPagingItems = viewModel.beerModelPagingDataFlow.collectAsLazyPagingItems()
-    Scaffold(
-        topBar = { BeersTopBar() },
-    ) {
+    Scaffold(backgroundColor = WhiteSmoke) {
         BeersContent(beersPagingItems = beersPagingItems)
     }
 }

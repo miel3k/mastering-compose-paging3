@@ -17,8 +17,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.miel3k.masteringcomposepaging3.R
 import com.miel3k.masteringcomposepaging3.ui.theme.DarkOrange
-import com.miel3k.masteringcomposepaging3.ui.theme.TangerineYellow
-import com.miel3k.masteringcomposepaging3.ui.theme.WhiteSnow
+import com.miel3k.masteringcomposepaging3.ui.theme.DroverYellow
+import com.miel3k.masteringcomposepaging3.ui.theme.WhiteSmoke
 
 /**
  * Created by jmielczarek on 17/10/2022
@@ -32,7 +32,7 @@ fun BeerItem(name: String, description: String, imageUrl: String) {
                 .padding(16.dp)
                 .fillMaxWidth(),
             elevation = 4.dp,
-            backgroundColor = TangerineYellow
+            backgroundColor = DroverYellow
         ) {
             Row(
                 modifier = Modifier
@@ -44,7 +44,7 @@ fun BeerItem(name: String, description: String, imageUrl: String) {
                     modifier = Modifier
                         .size(120.dp)
                         .padding(8.dp),
-                    backgroundColor = WhiteSnow
+                    backgroundColor = WhiteSmoke
                 ) {
                     AsyncImage(
                         modifier = Modifier.padding(8.dp),
