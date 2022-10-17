@@ -21,7 +21,11 @@ fun BeerList(beersPagingItems: LazyPagingItems<BeerModel>) {
             key = { beerModel -> beerModel.id }
         ) { beerModel ->
             if (beerModel != null) {
-                BeerItem(beerModel = beerModel)
+                BeerItem(
+                    name = beerModel.name,
+                    description = beerModel.id.toString(),
+                    imageUrl = beerModel.imageUrl,
+                )
             }
         }
     }
