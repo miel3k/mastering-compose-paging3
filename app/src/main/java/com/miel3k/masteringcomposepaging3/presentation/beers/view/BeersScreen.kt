@@ -18,6 +18,10 @@ fun BeersScreen(navController: NavHostController, viewModel: BeersViewModel = ge
     val uiState by viewModel.uiState.collectAsState()
     val beersPagingItems = viewModel.beerModelPagingDataFlow.collectAsLazyPagingItems()
     Scaffold(backgroundColor = WhiteSmoke) {
-        BeersContent(beersPagingItems = beersPagingItems)
+        BeersContent(
+            beersPagingItems = beersPagingItems,
+            countText = uiState.countText,
+            onBeerTap = viewModel::onBeerTap
+        )
     }
 }

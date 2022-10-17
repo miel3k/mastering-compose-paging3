@@ -24,7 +24,7 @@ import com.miel3k.masteringcomposepaging3.ui.theme.WhiteSmoke
  * Created by jmielczarek on 17/10/2022
  */
 @Composable
-fun BeerItem(name: String, description: String, imageUrl: String) {
+fun BeerItem(name: String, description: String, imageUrl: String, onBeerTap: () -> Unit) {
     Box {
         Card(
             modifier = Modifier
@@ -73,7 +73,7 @@ fun BeerItem(name: String, description: String, imageUrl: String) {
         }
         FloatingActionButton(
             modifier = Modifier.align(Alignment.CenterEnd),
-            onClick = { },
+            onClick = onBeerTap,
             backgroundColor = DarkOrange
         ) {
             Icon(painter = painterResource(id = R.drawable.ic_beer), contentDescription = "")

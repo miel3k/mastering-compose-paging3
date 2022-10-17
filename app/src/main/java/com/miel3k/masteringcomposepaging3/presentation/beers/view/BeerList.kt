@@ -13,7 +13,11 @@ import com.miel3k.masteringcomposepaging3.presentation.beers.model.BeerModel
  * Created by jmielczarek on 17/10/2022
  */
 @Composable
-fun BeerList(beersPagingItems: LazyPagingItems<BeerModel>, modifier: Modifier) {
+fun BeerList(
+    beersPagingItems: LazyPagingItems<BeerModel>,
+    onBeerTap: () -> Unit,
+    modifier: Modifier
+) {
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(8.dp),
@@ -27,6 +31,7 @@ fun BeerList(beersPagingItems: LazyPagingItems<BeerModel>, modifier: Modifier) {
                     name = beerModel.name,
                     description = beerModel.id.toString(),
                     imageUrl = beerModel.imageUrl,
+                    onBeerTap = onBeerTap
                 )
             }
         }

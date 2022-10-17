@@ -8,10 +8,7 @@ import com.miel3k.masteringcomposepaging3.data.pagingkey.PagingKeyDataSource
 import com.miel3k.masteringcomposepaging3.presentation.beers.model.BeerModel
 import com.miel3k.masteringcomposepaging3.presentation.beers.model.BeersUiState
 import com.miel3k.masteringcomposepaging3.presentation.beers.paging.BeersPagingMediator
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 
 /**
  * Created by jmielczarek on 16/10/2022
@@ -37,6 +34,17 @@ class BeersViewModel(
             .flow
             .map { it.map { beer -> BeerModel.fromBeer(beer) } }
             .cachedIn(viewModelScope)
+    }
+
+    fun onBeerTap() {
+        _uiState.update {
+            val newCountText = when (val newCount = it.count + 1) {
+                in 1..9 -> "00$newCount"
+                in 10..99 -> "0$newCount"
+                else -> newCount.toString()
+            }
+            it.copy(count = it.count + 1, countText = newCountText)
+        }
     }
 
     private companion object {
