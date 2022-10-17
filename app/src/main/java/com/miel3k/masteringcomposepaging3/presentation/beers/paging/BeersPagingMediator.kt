@@ -56,7 +56,7 @@ class BeersPagingMediator(
     }
 
     private companion object {
-        const val INITIAL_KEY = 0
+        const val INITIAL_KEY = 1
         const val BEERS_PAGING_ID = "beers"
     }
 }
