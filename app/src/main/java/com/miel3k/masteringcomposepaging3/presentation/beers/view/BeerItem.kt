@@ -59,9 +59,13 @@ fun BeerItem(name: String, description: String, imageUrl: String, onBeerTap: () 
                 Column(
                     Modifier
                         .height(IntrinsicSize.Max)
-                        .padding(end = 8.dp)
+                        .padding(end = 48.dp)
                 ) {
-                    Text(text = name)
+                    Text(
+                        text = name,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
+                    )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = description,
