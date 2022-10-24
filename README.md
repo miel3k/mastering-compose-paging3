@@ -10,6 +10,8 @@ Check out the [article]() with a detailed explanation of the implementation.
 
 # 📷 Preview
 
+# 🏛️ Architecture
+
 # 🛠 Tech Stack
 - [Jetpack](https://developer.android.com/jetpack)
   - [Compose](https://developer.android.com/jetpack/compose/documentation) - toolkit for building UI
