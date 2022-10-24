@@ -10,10 +10,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
+import com.miel3k.masteringcomposepaging3.R
 import com.miel3k.masteringcomposepaging3.presentation.beers.model.BeerModel
 import com.miel3k.masteringcomposepaging3.ui.theme.TangerineYellow
 
@@ -41,14 +43,10 @@ fun BeersContent(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Tap to taste!")
+            Text(stringResource(id = R.string.tap_to_taste))
             AnimatedContent(
                 targetState = countText,
-                transitionSpec = {
-                    addAnimation().using(
-                        SizeTransform(clip = false)
-                    )
-                }
+                transitionSpec = { contentTransform().using(SizeTransform(clip = false)) }
             ) { targetCount ->
                 Text(
                     text = targetCount,
@@ -66,10 +64,8 @@ fun BeersContent(
 }
 
 @ExperimentalAnimationApi
-fun addAnimation(duration: Int = 800): ContentTransform {
-    return slideInVertically(animationSpec = tween(durationMillis = duration)) { height -> height } + fadeIn(
-        animationSpec = tween(durationMillis = duration)
-    ) with slideOutVertically(animationSpec = tween(durationMillis = duration)) { height -> -height } + fadeOut(
-        animationSpec = tween(durationMillis = duration)
-    )
-}
+fun contentTransform(duration: Int = 800): ContentTransform =
+    slideInVertically(animationSpec = tween(durationMillis = duration)) { height -> height } +
+            fadeIn(animationSpec = tween(durationMillis = duration)) with
+            slideOutVertically(animationSpec = tween(durationMillis = duration)) { height -> -height } +
+            fadeOut(animationSpec = tween(durationMillis = duration))

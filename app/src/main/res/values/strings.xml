@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">mastering-compose-paging3</string>
+    <string name="tap_to_taste">Tap to taste!</string>
 </resources>
