@@ -9,8 +9,10 @@ This is an application demonstrating how to integrate Android Paging 3 library w
 Check out the [article]() with a detailed explanation of the implementation.
 
 # 📷 Preview
+![output](https://user-images.githubusercontent.com/26262185/197601971-933f8720-36d9-49f2-a698-d85f8d4b3be3.gif)
 
 # 🏛️ Architecture
+![mastering-compose-3](https://user-images.githubusercontent.com/26262185/197602091-585a8af6-59e6-4365-a1c7-c44de3f40433.png)
 
 # 🛠 Tech Stack
 - [Jetpack](https://developer.android.com/jetpack)
