@@ -6,7 +6,7 @@
 This is an application demonstrating how to integrate Android Paging 3 library with Jetpack Compose using offline first approach.
 
 # ✍️ Medium
-Check out the [article]() with a detailed explanation of the implementation.
+Check out the [article](https://medium.com/@miel3k/offline-first-pagination-with-room-paging-3-and-compose-63d9057924c1) with a detailed explanation of the implementation.
 
 # 📷 Preview
 ![output](https://user-images.githubusercontent.com/26262185/197601971-933f8720-36d9-49f2-a698-d85f8d4b3be3.gif)
